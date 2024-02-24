@@ -1,10 +1,8 @@
-﻿using Domain.Entities;
+﻿using Core.Security.Entities;
+using Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 using System.Reflection;
 
 namespace Persistence.Contexts;
@@ -19,6 +17,13 @@ public class BaseDbContext : IdentityDbContext<ApiUser>
     public DbSet<Fuel> Fuels { get; set; }
     public DbSet<Transmission> Transmissions { get; set; }
     public DbSet<Model> Models { get; set; }
+
+    public DbSet<OperationClaim> OperationClaims { get; set; }
+    public DbSet<OtpAuthenticator> OtpAuthenticators { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+    public DbSet<EmailAuthenticator> EmailAuthenticators { get; set; }
 
     public BaseDbContext()
     {

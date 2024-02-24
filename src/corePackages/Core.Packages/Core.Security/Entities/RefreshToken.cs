@@ -10,7 +10,7 @@ public class RefreshToken : Entity<int>
     public string CreatedByIp { get; set; }
     public DateTime? Revoked { get; set; }
     public string? RevokedByIp { get; set; }
-    public string? RevokedByToken { get; set; }
+    public string? ReplacedByToken { get; set; }
     public string? ReasonRevoked { get; set; }
 
     public virtual User User { get; set; } = null;
